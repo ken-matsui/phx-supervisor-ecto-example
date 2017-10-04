@@ -7,5 +7,8 @@ defmodule SupervisorEctoWeb.Router do
 
   scope "/api", SupervisorEctoWeb do
     pipe_through :api
+
+    # add
+    resources "/counts", CountController, except: [:new, :edit]
   end
 end
