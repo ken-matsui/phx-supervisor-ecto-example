@@ -29,7 +29,7 @@ defmodule SupervisorEcto.Counter do
 	def handle_cast(:inc, state) do
 		# ectoの値を更新
 		ecto_state = SupervisorEcto.Json.get_count!(1)
-		SupervisorEcto.Json.update_count(state, %{count: ecto_state.count + 1})
+		SupervisorEcto.Json.update_count(ecto_state, %{count: ecto_state.count + 1})
 		# GenServerの値を更新
 		new_state = %{count: state.count + 1, last_message: "inc"}
 		{:noreply, new_state}
