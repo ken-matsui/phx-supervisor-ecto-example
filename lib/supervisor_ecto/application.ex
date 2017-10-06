@@ -5,8 +5,6 @@ defmodule SupervisorEcto.Application do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec
-    # ectoから，id: 1のデータを取得
-    data = SupervisorEcto.Json.get_count!(1)
 
     # Define workers and child supervisors to be supervised
     children = [
@@ -18,7 +16,7 @@ defmodule SupervisorEcto.Application do
       # worker(SupervisorEcto.Worker, [arg1, arg2, arg3]),
 
       # sub supervisorの起動
-      supervisor(SupervisorEcto.SubSupervisor, [data.count]),
+      supervisor(SupervisorEcto.SubSupervisor, []),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
