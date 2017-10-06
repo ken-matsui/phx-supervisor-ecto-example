@@ -7,6 +7,8 @@ defmodule SupervisorEctoWeb.CountController do
   action_fallback SupervisorEctoWeb.FallbackController
 
   def index(conn, _params) do
+    # インクリメントする．
+    SupervisorEcto.Counter.increment()
     counts = Json.list_counts()
     render(conn, "index.json", counts: counts)
   end
