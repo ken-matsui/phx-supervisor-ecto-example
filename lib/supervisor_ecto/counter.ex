@@ -30,7 +30,7 @@ defmodule SupervisorEcto.Counter do
 		new_state = %{count: state.count + 1, last_message: "inc"}
 		# ectoに値を保管
 		state = SupervisorEcto.Json.get_count!(1)
-		SupervisorEcto.Json.update_count(state, %{count: state.count + 1})
+		update = SupervisorEcto.Json.update_count(state, %{count: state.count + 1})
 		{:noreply, new_state}
 	end
 end
