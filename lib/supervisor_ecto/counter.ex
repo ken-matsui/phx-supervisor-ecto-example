@@ -12,6 +12,9 @@ defmodule SupervisorEcto.Counter do
 	end
 
 	def increment do
+		# ectoの値を更新
+		state = SupervisorEcto.Json.get_count!(1)
+		SupervisorEcto.Json.update_count(state, %{count: state.count + 1})
 		GenServer.cast(__MODULE__, :inc)
 	end
 
@@ -28,9 +31,6 @@ defmodule SupervisorEcto.Counter do
 
 	def handle_call(:inc, state) do
 		new_state = %{count: state.count + 1, last_message: "inc"}
-		# ectoに値を保管
-		state = SupervisorEcto.Json.get_count!(1)
-		update = SupervisorEcto.Json.update_count(state, %{count: state.count + 1})
 		{:noreply, new_state}
 	end
 end
