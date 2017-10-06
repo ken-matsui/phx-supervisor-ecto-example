@@ -10,5 +10,6 @@ defmodule SupervisorEctoWeb.Router do
 
     # add
     resources "/counts", CountController, except: [:new, :edit]
+    get "/kill", CountController, :kill
   end
 end

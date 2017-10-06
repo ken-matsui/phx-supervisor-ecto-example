@@ -41,4 +41,8 @@ defmodule SupervisorEctoWeb.CountController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def kill(conn, _) do
+    SupervisorPhoenix.Counter.kill()
+  end
 end
