@@ -4,7 +4,7 @@ defmodule SupervisorEcto.Counter do
 	# # # # #
 	# 外部API
 	def start_link(initial_num) do
-		GenServer.start_link(__MODULE__, %{last_message: "start_link", count: init_num}, name: __MODULE__)
+		GenServer.start_link(__MODULE__, %{last_message: "start_link", count: initial_num}, name: __MODULE__)
 	end
 
 	def get_state do
