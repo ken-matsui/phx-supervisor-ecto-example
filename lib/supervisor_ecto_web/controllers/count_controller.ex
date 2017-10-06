@@ -43,6 +43,6 @@ defmodule SupervisorEctoWeb.CountController do
   end
 
   def kill(conn, _) do
-    SupervisorPhoenix.Counter.kill()
+    SupervisorEcto.Counter.kill()
   end
 end
