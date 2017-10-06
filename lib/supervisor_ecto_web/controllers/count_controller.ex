@@ -8,7 +8,7 @@ defmodule SupervisorEctoWeb.CountController do
 
   def index(conn, _params) do
     # インクリメントする．
-    SupervisorEcto.Counter.increment
+    SupervisorEcto.Counter.increment()
     counts = Json.list_counts()
     render(conn, "index.json", counts: counts)
   end
