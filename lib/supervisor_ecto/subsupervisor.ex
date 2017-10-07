@@ -4,7 +4,7 @@ defmodule SupervisorEcto.SubSupervisor do
 	def start_link() do
 		{:ok, _pid} = Supervisor.start_link(__MODULE__, [])
 	end
-	def init(_stash_pid) do
+	def init(_) do
 		# ectoから，id: 1のデータを取得
 		data = SupervisorEcto.Json.get_count!(1)
 
