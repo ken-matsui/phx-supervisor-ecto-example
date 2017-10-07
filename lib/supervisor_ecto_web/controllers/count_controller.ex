@@ -13,6 +13,7 @@ defmodule SupervisorEctoWeb.CountController do
     render(conn, "index.json", counts: counts)
   end
 
+  # POST
   def create(conn, %{"count" => count_params}) do
     with {:ok, %Count{} = count} <- Json.create_count(count_params) do
       conn
@@ -22,6 +23,7 @@ defmodule SupervisorEctoWeb.CountController do
     end
   end
 
+  # GET
   def show(conn, %{"id" => id}) do
     count = Json.get_count!(id)
     render(conn, "show.json", count: count)
@@ -35,6 +37,7 @@ defmodule SupervisorEctoWeb.CountController do
     end
   end
 
+  # DELETE
   def delete(conn, %{"id" => id}) do
     count = Json.get_count!(id)
     with {:ok, %Count{}} <- Json.delete_count(count) do
