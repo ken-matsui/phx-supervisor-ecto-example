@@ -9,6 +9,6 @@ defmodule SupervisorEcto.SubSupervisor do
 		data = SupervisorEcto.Json.get_count!(1)
 
 		child_processes = [ worker(SupervisorEcto.Counter, [data.count]) ]
-		supervise child_processes, strategy: :one_for_one
+		supervise(child_processes, strategy: :one_for_one)
 	end
 end
