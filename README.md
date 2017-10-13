@@ -10,7 +10,6 @@ To start your Phoenix server:
   * With `Ctr-c, Ctr-c` exit
   * Uncomment `# supervisor(SupervisorEcto.SubSupervisor, []),` of `lib/web/application.ex`
   * Start Phoenix endpoint with `mix phx.server`
-  
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
