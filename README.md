@@ -9,7 +9,10 @@ To start your Phoenix server:
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 
-And use `curl "http://localhost:4000/api/counts" -X POST -d "count[count]=0"` because `mix phx.gen.json Json Count counts count:integer` is running inside.
+`# supervisor(SupervisorEcto.SubSupervisor, []),` <= comment out.
+And use `curl "http://localhost:4000/api/counts" -X POST -d "count[count]=0"` 
+because `mix phx.gen.json Json Count counts count:integer` is running inside.
+and uncomment.
 
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
