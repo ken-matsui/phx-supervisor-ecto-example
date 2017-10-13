@@ -2,9 +2,14 @@
 
 To start your Phoenix server:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Comment out `# supervisor(SupervisorEcto.SubSupervisor, []),` of `lib/web/application.ex`
+ * Install dependencies with `mix deps.get`
+ * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
+ * Comment out `# supervisor(SupervisorEcto.SubSupervisor, []),` of `lib/web/application.ex`
+ * Start Phoenix endpoint with `mix phx.server`
+ * And use `curl "http://localhost:4000/api/counts" -X POST -d "count[count]=0"`
+ * With `Ctr-c, Ctr-c` exit
+ * Uncomment `# supervisor(SupervisorEcto.SubSupervisor, []),` of `lib/web/application.ex`
+ * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
